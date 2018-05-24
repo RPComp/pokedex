@@ -70,7 +70,7 @@ class Home extends Component {
     render(){
         let allPokemon  = this.state.pokemons;
         allPokemon = _.filter(allPokemon, (item)=>{
-            return _.includes(item.name, this.state.searchTerm)
+            return _.includes(item.name, this.state.searchTerm.toLocaleLowerCase())
         });
         if(this.state.sort !== '') {
             allPokemon = _.orderBy(allPokemon, 'name', this.state.sort);
